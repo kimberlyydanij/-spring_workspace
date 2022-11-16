@@ -12,5 +12,12 @@ public class SpringTest {
 		
 		svc = (Service)context.getBean("svc1");
 		svc.prn1();
+		
+		svc = (Service)context.getBean("svc2");
+		svc.prn2();
+		
+		svc = (Service)context.getBean("svc3");
+		svc.prn1();
+
 	}
 }
