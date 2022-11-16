@@ -3,7 +3,7 @@ package sample02;
 public class HelloSpring {
 
 	public static void main(String[] args) {
-		MessageBean Bean = null;
+		MessageBean bean = null;
 		//bean = new MessageBeanKorea();
 		//display(bean,"스프링");
 
