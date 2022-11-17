@@ -7,6 +7,8 @@
 
 <bean class="part01.HelloController" />
 <bean class="part02.HelloModelController" />
+<bean class="part03.HelloModelAndViewController" />
+<bean class="part04.HelloCommandController" />
 
 
 
