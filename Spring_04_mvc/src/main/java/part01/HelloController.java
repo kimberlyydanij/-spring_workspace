@@ -15,7 +15,7 @@ public class HelloController {
 	@RequestMapping(value="hello.htm")
 	public String search() {
 			
-		return "part01/hello";
+		return "part01/hello"; //스트링값 전달
 	} // end search
 	
 } // end class
