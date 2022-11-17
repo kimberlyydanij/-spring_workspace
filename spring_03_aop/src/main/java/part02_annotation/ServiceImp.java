@@ -2,6 +2,8 @@ package part02_annotation;
 
 import java.util.Random;
 
+
+//핵심 로직만 구현해놓음 target
 public class ServiceImp implements Service {
 	public ServiceImp() {
 

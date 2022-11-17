@@ -3,6 +3,7 @@ package part02_annotation;
 import java.util.Random;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /*https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
@@ -20,17 +21,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *    프로그래밍함으로써 공통 모듈은 여러 코드에 쉽게 적용할 수 있도록 해준다.
  * 
  */
-
+ 
 
 public class SpringTest {
 
 	public static void main(String[] args) {
-		String path = "part01_xml/aop.xml";
+		String path = "part02_annotation/aop.xml";
 
-		ApplicationContext context = new ClassPathXmlApplicationContext(path);
+		ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
 		Service svc = null;
-
 		svc = (Service) context.getBean("svc");
 		
 		//prn 출력전에 부르지도 않은 before 가 먼저 나옴  
