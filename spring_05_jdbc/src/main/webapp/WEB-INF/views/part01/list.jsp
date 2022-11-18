@@ -10,7 +10,7 @@
 </head>
 <body>
 <p><a href="insert.do">입력</a></p>
-<p><a href="update.do">수정</a></p>
+
 	<table>
 		<tr>
 			<th>num</th>

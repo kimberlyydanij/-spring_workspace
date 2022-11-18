@@ -32,7 +32,7 @@ public class MemDaoImp implements MemDAO{
 	
 	@Override
 	public MemDTO updateMethod(int num) {
-		return sqlSession.updateList("mem.one", )
+		return null;
 	}
 	
 	@Override
@@ -41,7 +41,7 @@ public class MemDaoImp implements MemDAO{
 	
 	@Override
 	public MemDTO one(int num) {
-		return null;
+		return sqlSession.selectOne("mem.one", num);
 	}
 	
 	@Override
