@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!--  part01_mybatis 안에 애들은 빈이 자동적으로 생성되게 함 이후 개체와 빈 간의 관계 설정해줘야 함 -->	
+	<context:component-scan base-package="part01_mybatis">
+		
+	</context:component-scan>
 
 <!--  [1] DataSource 빈 선언 -->
+	<!--  
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
 		<property name="username" value="hr" />
 		<property name="password" value="a1234" />
-		</bean>
+		</bean>  -->
 		
+
 <!--  [2] SqlSessionFactoryBean 빈선언 (쿼리를 실행하기 위한 객체 생성)-->
 	<bean id="sqlSessionFactory"
 		class = "org.mybatis.spring.SqlSessionFactoryBean">
@@ -33,19 +42,22 @@
 		</bean>		
 		
 	<!--  [4] MemDaoImp 빈 선언 -->
+	<!-- 
 		<bean id="dao" class="part01_mybatis.MemDaoImp" >
 			<property name="sqlSession" ref="sqlSession" />
-		</bean>
+		</bean>  -->
 		
 	<!--  [5] MemController  빈 선언 -->
+	<!--   
 		<bean class="part01_mybatis.MemController">
 			<property name="memDAO" ref="dao" />
-		</bean>
+		</bean> -->
 
 	<!--  [6] View 빈 선언 -->
+	<!--
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 			<property name="prefix" value="/WEB-INF/views/" />
 			<property name="suffix" value=".jsp" />
-		</bean>
+		</bean>  -->
 		
 </beans>
