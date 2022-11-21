@@ -34,7 +34,7 @@
 <!--  [5] 선언적 트랜잭션 : <tx:advice>태그를 이용한 트랜잭션처리 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
-			<tx:method name="insertProcess" 
+			<tx:method name="*Process" 
 				rollback-for="org.springframework.dao.DuplicateKeyException" />
 		</tx:attributes>
 	</tx:advice>

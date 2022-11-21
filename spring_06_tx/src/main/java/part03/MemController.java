@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-// http://localhost:8090/myapp/secondmain.ss
+// http://localhost:8090/myapp/threemain.se
 @Controller
 public class MemController {
 	
@@ -20,7 +20,7 @@ public class MemController {
 		this.svc = svc;
 	} // end setSvc
 	
-	@RequestMapping("/secondmain.ss")
+	@RequestMapping("/threemain.se")
 	public void execute() {
 		System.out.println("execute");
 		//트랜젝션이 설정된 메소드에서는 try~catch를 설정하며 ㄴ안되고

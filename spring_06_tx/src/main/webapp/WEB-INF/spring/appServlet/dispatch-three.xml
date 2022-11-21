@@ -31,13 +31,8 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 	
-<!--  [5] 선언적 트랜잭션 : <tx:advice>태그를 이용한 트랜잭션처리 -->
-	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="insertProcess" 
-				rollback-for="org.springframework.dao.DuplicateKeyException" />
-		</tx:attributes>
-	</tx:advice>
+<!--  [5] 선언적 트랜잭션 : annotation을 이용한 트랜잭션처리 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 <!--  [6] MemDaoImp 빈 선언 -->
 	<bean id="dao" class="model.MemDaoImp">
@@ -45,12 +40,12 @@
 	</bean>
 		
 <!--  [7] ServiceImp 빈 선언 -->
-	<bean id="service" class="part02.ServiceImp">
+	<bean id="service" class="part03.ServiceImp">
 		<property name="memDAO" ref="dao" />
 	</bean>
 	
 <!--  [8] MemController 빈 선언 -->
-	<bean class="part02.MemController">
+	<bean class="part03.MemController">
 		<property name="svc" ref="service" />
 	</bean>
 	
