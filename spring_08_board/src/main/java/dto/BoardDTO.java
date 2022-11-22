@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class BoardDTO {
 	private int num, readcount, ref, re_step, re_level;
-	private String writer, email, subjext, content, ip;
+	private String writer, email, subject, content, ip;
 	private Date reg_date;
 	
 	//board 테이블의 파일 첨부를 처리해주는 멤버변수
@@ -74,12 +74,12 @@ public class BoardDTO {
 		this.email = email;
 	}
 
-	public String getSubjext() {
-		return subjext;
+	public String getSubject() {
+		return subject;
 	}
 
-	public void setSubjext(String subjext) {
-		this.subjext = subjext;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 	public String getContent() {
