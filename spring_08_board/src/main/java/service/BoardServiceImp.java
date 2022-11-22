@@ -6,7 +6,7 @@ import dao.BoardDAO;
 import dto.BoardDTO;
 import dto.PageDTO;
 
-public class BoardServiceImp implements BoardDAO{
+public class BoardServiceImp implements BoardService{
 	
 	private BoardDAO dao;
 	
@@ -20,49 +20,46 @@ public class BoardServiceImp implements BoardDAO{
 	}
 
 	@Override
-	public int count() {
+	public int countProcess() {
 		return 0;
 	}
 
 	@Override
-	public List<BoardDTO> list(PageDTO pv) {
+	public List<BoardDTO> listProcess(PageDTO pv) {
 		return null;
 	}
 
 	@Override
-	public void readCount(int num) {
+	public void insertProcess(BoardDTO dto) {
 	}
 
 	@Override
-	public BoardDTO content(int num) {
+	public BoardDTO contentProcess(int num) {
 		return null;
 	}
 
 	@Override
-	public void reStepCount(BoardDTO dto) {
+	public void reStepProcess(BoardDTO dto) {
 	}
 
 	@Override
-	public void save(BoardDTO dto) {
-	}
-
-	@Override
-	public BoardDTO updateNum(int num) {
+	public BoardDTO updateSelectProcess(int num) {
 		return null;
 	}
 
 	@Override
-	public void update(int num) {
+	public void updateProcess(BoardDTO dto, String urlpath) {
 	}
 
 	@Override
-	public void delete(int num) {
+	public void deleteProcess(int num, String urlpath) {
 	}
 
 	@Override
-	public String getFile(int num) {
+	public String fileSelectprocess(int num) {
 		return null;
 	}
 
+	
 } // end class
 
