@@ -33,6 +33,7 @@ public class BoardServiceImp implements BoardService{
 	public void insertProcess(BoardDTO dto) {
 		//답변글이면
 		if(dto.getRef()!=0) {
+			dao.reStepCount(dto);
 			dto.setRe_step(dto.getRe_step()+1);
 			dto.setRe_level(dto.getRe_level()+1);
 		}
@@ -52,7 +53,7 @@ public class BoardServiceImp implements BoardService{
 
 	@Override
 	public BoardDTO updateSelectProcess(int num) {
-		return null;
+		return dao.content(num);
 	}
 
 	@Override

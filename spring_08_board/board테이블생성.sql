@@ -64,6 +64,13 @@ select b.* from
   order by ref desc, re_step asc) a)b
 where b.rm >=1  and b.rm<=5
 
+
+select b.* from 
+(select rownum as rm, a.* from(
+  select * from board
+  order by ref desc, re_step asc) a)b
+where b.rm >=1  and b.rm<=5
+
 delete from board where num=23;
 
 WebServlet("/board/*")

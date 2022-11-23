@@ -79,13 +79,23 @@ public class BoardController {
 		
 		service.insertProcess(dto);
 		
+		//답변글이면
 		if(dto.getRef() != 0 ) {
 			return "redirect:/list.sb?currentPage=" + pv.getCurrentPage();
-		} else {
+		} else { //제목글
 			return "redirect:/list.sb";
 		}
 		
 	} // end writeProMethod
+	
+	@RequestMapping(value="/update.sb", method=RequestMethod.GET)
+	public ModelAndView updateMethod(int num, int currentPage, ModelAndView mav) {
+		
+		mav.addObject("dto",service.updateSelectProcess(num));
+		mav.addObject("currentPage", currentPage);
+		mav.setViewName("board/update");
+		return mav;
+	}
 	
 	private UUID saveCopyFile(MultipartFile file, HttpServletRequest request) {
 		String fileName = file.getOriginalFilename();

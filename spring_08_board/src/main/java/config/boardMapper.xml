@@ -50,4 +50,8 @@
 		WHERE num=#{num}
 	</select>
 	
+	<update id="reStepCount" parameterType="dto.BoardDTO">
+		UPDATE board SET re_step = re_step + 1
+		WHERE ref=#{ref} AND re_step>#{re_step}
+	</update>
 </mapper>
