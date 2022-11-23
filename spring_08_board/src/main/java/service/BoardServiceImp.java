@@ -1,5 +1,6 @@
 package service;
 
+import java.io.File;
 import java.util.List;
 
 import dao.BoardDAO;
@@ -58,11 +59,32 @@ public class BoardServiceImp implements BoardService{
 
 	@Override
 	public void updateProcess(BoardDTO dto, String urlpath) {
-	}
+		String filename = dto.getUpload();
+		//수정한 파일 있으면
+		if(filename != null) {
+		String path = dao.getFile(dto.getNum());
+			//기본 첨부파일이 있으면
+			if(path!=null) {
+				File file = new File(urlpath, path);
+				file.delete();
+			}
+		}
+		
+		dao.update(dto);
+	} // end updateProcess
 
 	@Override
 	public void deleteProcess(int num, String urlpath) {
-	}
+		String path = dao.getFile(num);
+		
+		//num컬럼에 해당하는 첨부파일이 있으면
+		if(path!=null) {
+			File fe = new File(urlpath, path);
+			fe.delete();
+		}
+		
+		dao.delete(num);
+	} // end deleteProcess
 
 	@Override
 	public String fileSelectprocess(int num) {
