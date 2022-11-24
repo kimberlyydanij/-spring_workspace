@@ -17,4 +17,8 @@ public class SearchDaumController {
 		return "part04/form";
 	}
 	
+	@RequestMapping(value="/searchOpen.do", method=RequestMethod.GET)
+	public String process() {
+		return null;
+	}
 }
