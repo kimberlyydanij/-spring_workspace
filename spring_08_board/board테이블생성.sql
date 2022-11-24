@@ -41,7 +41,11 @@ select num, subject, ref, re_step, re_level
 from board
 order by ref desc, re_step asc
 
-
+num    subject    ref,   re_step,  re_level
+1         제목글1        1         0            0
+2         제목글2       2         0            0
+3         제1_답1       1          2            1
+4         제1_답2       1          1           1
 
 select b.* 
 from (select rownum as rm, a.*
@@ -53,7 +57,9 @@ where b.rm>=? and b.rm<=?
 
 
 delete from board
-where num=21
+where num=5
+
+commit
 
 drop table board;
 
@@ -71,7 +77,7 @@ select b.* from
   order by ref desc, re_step asc) a)b
 where b.rm >=1  and b.rm<=5
 
-delete from board where num=23;
+delete from board where num=7
 
 WebServlet("/board/*")
 
@@ -96,8 +102,6 @@ select rownum, b.*
  from(select rownum as rm, a.*
  from(select * from board order by ref desc ,re_step asc)a)b
  where b.rm>=? and b.rm <=?
-
-
 
 
 
