@@ -12,6 +12,7 @@ import java.net.URLEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
  //http://localhost:8090/myapp/booksearch.do
 @Controller
@@ -26,6 +27,7 @@ public class SearchDaumController {
 		return "part04/form";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/searchOpen.do", method=RequestMethod.GET)
 	public String process(String query) throws MalformedURLException, IOException {
 		
@@ -35,6 +37,7 @@ public class SearchDaumController {
 		 	*/
 		String url = "https://dapi.kakao.com/v3/search/book?target=title&query="+ URLEncoder.encode(query, "UTF-8");
 		HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
+		con.setRequestProperty("Authorization", "KakaoAK 22144f9f7b86e6ce124b91941228882c");
 		con.setRequestMethod("GET");
 		
 		BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -45,6 +48,6 @@ public class SearchDaumController {
 		}
 		
 		System.out.println(total);
-		return null;
+		return total;
 	}
 }
