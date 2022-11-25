@@ -8,8 +8,9 @@
 <link rel="stylesheet" href="map/map.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=903a4aeed7d052f1bba36783e3f8632e"></script>
-	
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31865e6af017491891e8df7f8d545e25"></script> 
+<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=903a4aeed7d052f1bba36783e3f8632e"></script>-->
+
 </head>
 <body>
 	<div class="map_wrap">
