@@ -27,14 +27,15 @@ public class SearchDaumController {
 		return "part04/form";
 	}
 	
+	
 	@ResponseBody
 	@RequestMapping(value="/searchOpen.do", method=RequestMethod.GET)
 	public String process(String query) throws MalformedURLException, IOException {
 		
 		/*curl -v -X GET "https://dapi.kakao.com/v3/search/book?target=title" \
 		--data-urlencode "query=미움받을 용기" \
-		-H "Authorization: KakaoAK ${REST_API_KEY}"
-		 	*/
+		-H "Authorization: KakaoAK ${REST_API_KEY}"  */
+		
 		String url = "https://dapi.kakao.com/v3/search/book?target=title&query="+ URLEncoder.encode(query, "UTF-8");
 		HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
 		con.setRequestProperty("Authorization", "KakaoAK 22144f9f7b86e6ce124b91941228882c");
@@ -46,8 +47,8 @@ public class SearchDaumController {
 		while((input = reader.readLine())!=null) {
 			total += input;
 		}
-		
+		 
 		System.out.println(total);
 		return total;
-	}
+	} 
 }
