@@ -5,12 +5,12 @@ $(document).ready(function() {
 function process() {
 	$.ajax({
 		type: 'GET',
-		dataType: 'json',
-		url: 'searchOpen.do?query='+$('#search').val(),
-		success:viewMessage,
-		error:function(xhr, textStatus, error) {
-			alert(xhr.status);
-		}
+		url: https://dapi.kakao.com/v3/search/book?target=title',
+		headers:{"Authorization": "KakaoAK 22144f9f7b86e6ce124b91941228882c"},
+		dataYype:'json',
+		data:{"query": $('#query').val()},
+		sucess:viewMessage
+		
 	});
 }
 		
