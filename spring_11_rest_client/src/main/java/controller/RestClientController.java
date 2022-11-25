@@ -33,7 +33,7 @@ import dto.MemDTO;
  * view
  * 1. java + spring +jsp
  * 2. ajax + jsp
- * 2. angular, react, vue 
+ * 3. angular, react, vue 
  */
 
 //https://camel.apache.org/manual/json.html
