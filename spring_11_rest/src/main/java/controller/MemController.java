@@ -40,7 +40,7 @@ public class MemController {
 		return dao.list();
 	} // end List
 
-	// http://localhost:8090/myapp/mem/list/58
+	// http://localhost:8090/myapp/mem/list
 	@ResponseBody
 	@RequestMapping(value="/list/{ss}", method=RequestMethod.GET)
 	public MemDTO listMethod(@PathVariable("ss") int num ) { 
