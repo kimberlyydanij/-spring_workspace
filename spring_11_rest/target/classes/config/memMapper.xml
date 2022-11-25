@@ -27,7 +27,7 @@
 	
 	<update id="upt" parameterType="dto.MemDTO">
 	 update mem 
-	 set name=#{name},age=#{age},loc=#{loc} 
+	 set name=#{name}
 	 where num=#{num}
 	</update>
 

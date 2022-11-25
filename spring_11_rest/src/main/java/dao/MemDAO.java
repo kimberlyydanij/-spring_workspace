@@ -9,6 +9,6 @@ public interface MemDAO {
 	public MemDTO list(int num);
 	public MemDTO list(MemDTO dto);
 	public void register(MemDTO dto);
-	public void  update(MemDTO dto);
+	public void update(MemDTO dto);
 	public void delete(int num);
 }
