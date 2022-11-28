@@ -195,7 +195,7 @@ public class RestClientController {
 	public String updatePro(MemDTO dto) throws IOException {
 		URL url = new URL("http://localhost:8090/myapp/mem/update");
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-		conn.setRequestMethod("PUT");  //POST, DELETE, PUT, GET
+		conn.setRequestMethod("PUT");  //POST, DELETE, PUT, GET 
 		//서버에 request Data을 json 타입으로 전달(RequestBody에 전달시)
 		conn.setRequestProperty("Content-Type", "application/json");
 		//Output스트림으로 데이터를 넘겨준다는 의미
