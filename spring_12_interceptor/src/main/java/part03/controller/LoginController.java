@@ -23,14 +23,21 @@ public class LoginController {
 	} // end loginProcess
 	
 	@RequestMapping("/logpro.do")
-	public String loginExecution(PersonDTO dto, HttpSession session) {
+	public String loginExecution(String returnUrl, PersonDTO dto, HttpSession session) {
 		if(dto.getId().equals("kim") && dto.getPass().equals("1234")) {
 			session.setAttribute("chk", dto.getId());
 			session.setMaxInactiveInterval(1000*60*30);  // 세션 만료시간 지정, 1000=1초
 			System.out.println(session.getAttribute("chk"));		
+			if(returnUrl !="") {
+				return "redirect=:/"+returnUrl;						
+			}
 		}
 		return "redirect:/index.do";
 	}
 	
-
+	@RequestMapping("/logout.do")
+	public String logoutProcess(HttpSession session) {
+		session.removeAttribute("chk");
+		return "redirect:index.do";
+	}
 } // end class

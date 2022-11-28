@@ -9,6 +9,7 @@
 	<bean class="part01.controller.HomeController" />
 	<bean class="part02.controller.NoticeController" />
 	<bean class="part03.controller.LoginController" />
+	<bean class="part03.controller.IndexController" />
 
 
 	<!-- View -->
